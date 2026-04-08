@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Citationlist from './components/CitationList.vue'
 import ChartSection from './components/ChartSection.vue'
+import FilterButton from './components/FilterButton.vue'
 </script>
 
 <template>
@@ -39,7 +40,7 @@ import ChartSection from './components/ChartSection.vue'
     </section>
 
     <section class="controls">
-      <button>Sort and filter</button>
+      <FilterButton />
       <input type="text" placeholder="" aria-label="Search">
       <button aria-label="Search">🔍</button>
     </section>

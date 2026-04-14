@@ -7,7 +7,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="thumbnail" @click="store.image_popup_open = true">
+  <div class="thumbnail" @click="store.imagePopupOpen = true">
     <img :src="url" />
   </div>
 </template>

@@ -1,5 +1,6 @@
 <script setup lang="ts">
   import { ref } from 'vue'
+  import { store } from '../store.js'
 
   // state
   const filtersOpen = ref(false)
@@ -34,7 +35,7 @@
           <span>Filter</span>
         </div>
         <div class="filter-row">
-          <label><input type="checkbox"> PubMed</label>
+          <label><input type="checkbox" @change="store.setFilter({pubmed: $event.target.checked})"> PubMed</label>
           <label><input type="checkbox"> Preprints</label>
           <label><input type="checkbox" checked> Has images</label>
         </div>

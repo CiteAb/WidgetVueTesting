@@ -1,5 +1,6 @@
 from flask import jsonify
 from flask import Flask
+from flask import request
 
 app = Flask(__name__)
 
@@ -102,7 +103,7 @@ def summary():
             'image_urls': []
           }
         ],
-        'all_image_urls': [
+        'allImageUrls': [
           "https://images.citeab.com/s--hDtYlWxD--/t_full_trimmed/v1589975412/k18gqxihiyatelq3iguj.jpg",
           "https://images.citeab.com/s--SHOIZu5Z--/t_full_trimmed/v1589975451/linrxgmmpjsr46elzdla.jpg",
           "https://images.citeab.com/s--rxJOESbC--/t_full_trimmed/v1589975451/swlztwvt8zbxaxugwei1.jpg",
@@ -113,6 +114,9 @@ def summary():
           "https://images.citeab.com/s--2fv-q4Uo--/t_full_trimmed/v1589975451/zl4z4lwufm9b6r7nb32x.jpg"
         ]
     }
+    print(request.args.get('pubmed') == 'true')
+    if request.args.get('pubmed') == 'true':
+        d['citations'] = d['citations'][:2]
     response = jsonify(d)
     response.headers.add("Access-Control-Allow-Origin", "*")
     return response

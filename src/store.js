@@ -3,15 +3,28 @@ import { reactive } from 'vue'
 export const store = reactive({
   citations: [
   ],
-  all_image_urls: [
+  allImageUrls: [
   ],
-  image_popup_open: false
-})
+  imagePopupOpen: false,
+  carousel: {
+    imageUrls: [],
+    total: 100,
+    nextUrl: 'aaa'
+  },
+  filters: {},
+  setFilter(filter) {
+    store.filters = {...store.filters, ...filter};
+    console.log(store.filters);
+    fetchData();
+  }
+});
 
+const fetchData = async () => {
+  const params = new URLSearchParams(store.filters);
+  const res = await fetch(`http://127.0.0.1:5000/data?${params.toString() || ''}`);
+  const data = await res.json();
+  store.citations = data.citations;
+  store.allImageUrls = data.allImageUrls;
+}
 
-fetch('http://127.0.0.1:5000/data')
-  .then(response => response.json())
-  .then(response => {
-      store.citations = response.citations
-      store.all_image_urls = response.all_image_urls
-  });
+fetchData();

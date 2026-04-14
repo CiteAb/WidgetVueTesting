@@ -58,13 +58,13 @@ import { store } from './store.js'
             <button aria-label="Previous image">&#60;</button>
             <button aria-label="Next image">&#62;</button>
           </div>
-          <button class="enlarge-btn" @click="store.image_popup_open = true">Enlarge</button>
+          <button class="enlarge-btn" @click="store.imagePopupOpen = true">Enlarge</button>
         </div>
         <div class="product-image-desc">
           Western blot analysis of extracts from HeLa cells transfected with 100 nM control siRNA #621 (C-) or p44 MAPK (Erk1) siRNA (+), using p44/42 MAPK (Erk1/2) Antibody #9102 and GCK Antibody #3732. The Erk1/2 antibody confirms silencing of Erk1 expression, and GCK Antibody is used to control for loading and specificity of p44 MAPK (Erk1) siRNA.
         </div>
         <div class="product-image-thumbs">
-          <ImageThumbnail v-for="url in store.all_image_urls" :url="url"/>
+          <ImageThumbnail v-for="url in store.allImageUrls" :url="url"/>
         </div>
       </section>
       <section class="right">

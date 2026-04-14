@@ -4,7 +4,7 @@
 </script>
 
 <template>
-  <div v-if="store.image_popup_open" class="modal-overlay">
+  <div v-if="store.imagePopupOpen" class="modal-overlay">
     <div class="image-modal">
       <div class="image-modal-main">
         <div class="image-count">📷 1 of 100</div>
@@ -15,7 +15,7 @@
           </span>
         </div>
         <button class="nav-btn right"><span>&gt;</span></button>
-        <button class="close-btn" @click="store.image_popup_open = false">✕ Close</button>
+        <button class="close-btn" @click="store.imagePopupOpen = false">✕ Close</button>
       </div>
       <div class="image-desc">
         Western blot analysis of extracts from HeLa cells transfected with 100 nM control siRNA #6201 (C-) or p44 MAPK (Erk1) siRNA (+), using p44/42 MAPK (Erk1/2) Antibody #9102 and GCK Antibody #3732. The Erk1/2 antibody confirms silencing of Erk1 expression, and GCK Antibody is used to control for loading and specificity of p44 MAPK (Erk1) siRNA.

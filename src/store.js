@@ -30,7 +30,7 @@ export const store = reactive({
 // }
 const fetchData = async () => {
   const params = new URLSearchParams(store.filters);
-  const res = await fetch(`https://www.citeab.test/api/graph_metrics?${params.toString() || ''}`);
+  const res = await fetch(`https://www.beta.citeab.com/api/graph_metrics?key=754c4620-49d7-4aad-b3a3-47a9f5542712&reagent_id=3288316&limit=10000&top_n=10`);
   const data = await res.json();
   store.graphData = data.results;
   store.citations = data.citations;

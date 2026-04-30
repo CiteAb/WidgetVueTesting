@@ -16,7 +16,7 @@
     });
 
     store.graphData.links.forEach(link => {
-      graph.addEdge(link.source, link.target, { size: link.value, color: "grey" });
+      graph.addEdge(link.source, link.target, { size: link.value / 1000, color: "grey" });
     });
 
     // let settings = forceAtlas2.inferSettings(graph);
